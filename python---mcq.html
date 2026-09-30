@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python MCQ Quiz</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3e8ff;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .quiz-container {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #6b21a8;
+        }
+
+        .question {
+            margin-top: 25px;
+            padding: 20px;
+            background: #faf5ff;
+            border-radius: 15px;
+        }
+
+        .question h3 {
+            color: #4c1d95;
+        }
+
+        label {
+            display: block;
+            padding: 12px;
+            margin: 8px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        label:hover {
+            background: #ede9fe;
+        }
+
+        button {
+            display: block;
+            margin: 30px auto 10px;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 12px;
+            background: #7c3aed;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #6d28d9;
+        }
+
+        #result {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #6b21a8;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="quiz-container">
+
+    <h1>🐍 Python MCQ Quiz</h1>
+
+    <p style="text-align:center;">
+        Test your basic Python knowledge!
+    </p>
+
+    <div class="question">
+        <h3>1. Which symbol is used to write a comment in Python?</h3>
+
+        <label>
+            <input type="radio" name="q1" value="A">
+            A. //
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="B">
+            B. #
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="C">
+            C. /*
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="D">
+            D. --
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h3>2. Which function is used to display output in Python?</h3>
+
+        <label>
+            <input type="radio" name="q2" value="A">
+            A. display()
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="B">
+            B. show()
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="C">
+            C. print()
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="D">
+            D. output()
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h3>3. Which of these is a valid Python variable name?</h3>
+
+        <label>
+            <input type="radio" name="q3" value="A">
+            A. 2name
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="B">
+            B. my_name
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="C">
+            C. my-name
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="D">
+            D. class
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h3>4. Which data type is used to store True or False?</h3>
+
+        <label>
+            <input type="radio" name="q4" value="A">
+            A. String
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="B">
+            B. Integer
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="C">
+            C. Boolean
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="D">
+            D. Float
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h3>5. Which keyword is used to define a function in Python?</h3>
+
+        <label>
+            <input type="radio" name="q5" value="A">
+            A. function
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="B">
+            B. define
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="C">
+            C. def
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="D">
+            D. fun
+        </label>
+    </div>
+
+
+    <button onclick="checkQuiz()">Submit Quiz</button>
+
+    <div id="result"></div>
+
+</div>
+
+
+<script>
+
+function checkQuiz() {
+
+    const answers = {
+        q1: "B",
+        q2: "C",
+        q3: "B",
+        q4: "C",
+        q5: "C"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    document.getElementById("result").innerHTML =
+        "🎉 Your Score: " + score + " / 5";
+
+}
+
+</script>
+
+</body>
+</html>
